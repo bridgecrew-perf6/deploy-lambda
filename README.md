@@ -25,7 +25,7 @@ To add full access to S3 (do not do this in production) : `aws iam attach-role-p
 The **AmazonS3FullAccess** gives full access to S3.
 
 ## 1. Install dependencies
-
+`npm install`
 
 ## 2. Zip your code
 `zip -r lambda.zip lambda.js node_modules`
