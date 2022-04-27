@@ -22,7 +22,7 @@ The **AWSLambdaBasicExecutionRole** policy has the permissions that the function
 
 To add full access to S3 (do not do this in production) : `aws iam attach-role-policy --role-name lambda-role --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess`
 
-The **AmazonS3FullAccess** gives full access to S3.
+The **AmazonS3FullAccess** policy gives full access to S3.
 
 ## 1. Install dependencies
 `npm install`
