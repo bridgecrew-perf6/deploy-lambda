@@ -23,14 +23,11 @@ public class LambdaHandler implements RequestHandler<Map<String, String>, String
     public String handleRequest(Map<String, String> input, Context context) {
 
         try {
-            S3Client client = S3Client.builder().region(REGION).build();
-            PutObjectRequest request = PutObjectRequest.builder()
-                    .bucket(BUCKET).key(FILE_NAME).build();
-            PutObjectResponse response = client.putObject(request,
-                    RequestBody.fromString("content"));
-            client.close();
+            String response = new S3Helper().putObjectToS3(REGION, BUCKET, FILE_NAME);
+            System.out.println(response);
         } catch (Exception e) {
             System.err.println(e.getMessage());
+            System.exit(-1);
         }
 
         return "Done";

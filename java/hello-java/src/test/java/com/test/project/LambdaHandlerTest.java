@@ -1,38 +1,35 @@
 package com.test.project;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.junit.Test;
+import org.mockito.Mockito;
+import software.amazon.awssdk.regions.Region;
+
+import static org.junit.Assert.assertTrue;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.*;
 
 /**
  * Unit test for simple App.
  */
-public class LambdaHandlerTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public LambdaHandlerTest( String testName )
-    {
-        super( testName );
+public class LambdaHandlerTest{
+
+    @Test
+    public void testHandler() {
+        S3Helper s3Helper = new S3Helper();
+        S3Helper spiedS3Helper = spy(s3Helper);
+        Mockito.doReturn("Response").when(spiedS3Helper).putObjectToS3(any(Region.class), anyString(), anyString());
+
+        Map<String, String> input = new HashMap<String, String>();
+        LambdaHandler handler = new LambdaHandler();
+
+        String res = handler.handleRequest(input, null);
+
+        System.out.println(res);
+        assertTrue(res == "Done");
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( LambdaHandlerTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testHandler()
-    {
-        assertTrue( true );
-    }
 }
