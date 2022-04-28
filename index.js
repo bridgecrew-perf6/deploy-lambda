@@ -4,7 +4,7 @@ const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
 
 const REGION = "eu-west-3";
 const BUCKET = "deploy-lambda-codingmentor";
-const FILE_NAME = "file.txt";
+const FILE_NAME = "folder/file.txt";
 
 exports.handler = async function (event, context) {
   const client = new S3Client({ region: REGION });

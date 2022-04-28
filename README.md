@@ -28,7 +28,7 @@ The **AmazonS3FullAccess** gives full access to S3.
 
 
 ## 2. Zip your code
-`zip -r lambda.zip lambda.js node_modules`
+`zip -r lambda.zip index.js node_modules`
 
 **-r** means recursively. It is not necessary for one file but if you have directories, it is useful.
 
