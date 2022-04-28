@@ -1,4 +1,4 @@
-# How to deploy a lamdba using NodeJS
+# How to deploy a lambda (NodeJS)
 
 ## Pre-requisites
 
