@@ -36,8 +36,8 @@ Follow instructions [here](https://docs.aws.amazon.com/lambda/latest/dg/java-pac
 ### 3.a Create the lambda
 `aws lambda create-function --function-name hello-world-java \     
 --zip-file fileb://target/original-hello-java-1.0-SNAPSHOT.jar --handler com.test.project.LambdaHandler --runtime java11 \
---role arn:aws:iam::3827592:role/lambda-role`
+--role arn:aws:iam::3827592:role/lambda-role --timeout 60 --memory-size 256`
 
 ### 3.b Update the lambda
 `aws lambda update-function-code --function-name hello-world-java \
---zip-file fileb://target/original-hello-java-1.0-SNAPSHOT.jar`
+--zip-file fileb://target/hello-java-1.0-SNAPSHOT.jar`
