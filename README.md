@@ -1,4 +1,4 @@
-# How to deploy a lamdba using NodeJS
+# How to deploy a lambda (NodeJS)
 
 ## Pre-requisites
 
@@ -22,15 +22,13 @@ The **AWSLambdaBasicExecutionRole** policy has the permissions that the function
 
 To add full access to S3 (do not do this in production) : `aws iam attach-role-policy --role-name lambda-role --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess`
 
-The **AmazonS3FullAccess** gives full access to S3.
+The **AmazonS3FullAccess** policy gives full access to S3.
 
 ## 1. Install dependencies
-
+`npm install`
 
 ## 2. Zip your code
 `zip -r lambda.zip index.js node_modules`
-
-**-r** means recursively. It is not necessary for one file but if you have directories, it is useful.
 
 ## 3. Deploy the code
 
