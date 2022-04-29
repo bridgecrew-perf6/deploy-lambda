@@ -4,6 +4,7 @@
 
 ## Java and Maven
 Java : Follow instructions [here](https://www.oracle.com/java/technologies/downloads/)
+
 Maven : Follow instructions [here](https://maven.apache.org/install.html) or use your system package manager `sudo apt install maven` (ubuntu).
 
 ### AWS CLI
