@@ -21,7 +21,7 @@ public class LambdaHandlerTest{
     public void testHandler() {
         S3Helper s3Helper = new S3Helper();
         S3Helper spiedS3Helper = spy(s3Helper);
-        Mockito.doReturn("Response").when(spiedS3Helper).putObjectToS3(any(Region.class), anyString(), anyString());
+        Mockito.doThrow(new Error("error")).when(spiedS3Helper).putObjectToS3(any(Region.class), anyString(), anyString());
 
         Map<String, String> input = new HashMap<String, String>();
         LambdaHandler handler = new LambdaHandler();
